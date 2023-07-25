@@ -1,6 +1,7 @@
 using APIRestLab01.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureCors();
@@ -46,3 +47,8 @@ app.Run(async context => {
 app.MapControllers();
 
 app.Run();
+
+
+namespace Microsoft.AspNetCore.Http { 
+    public delegate Task RequestDelegate(HttpContext context); 
+}
