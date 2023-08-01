@@ -19,5 +19,7 @@ namespace APIRestLab01.Extensions
         public static void ConfigureLoggerService(this IServiceCollection services) =>
             services.AddSingleton<ILoggerManager, LoggerManager>();
 
+
+
     }
 }

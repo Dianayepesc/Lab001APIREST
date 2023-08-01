@@ -1,12 +1,19 @@
 using APIRestLab01.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NLog;
+using Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLoggerService();
+
+builder.Services.AddDbContext<RepositoryContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection")));
+
 
 // Add services to the container.
 

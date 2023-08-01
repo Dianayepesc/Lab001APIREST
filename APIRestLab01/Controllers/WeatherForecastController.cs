@@ -7,15 +7,13 @@ namespace APIRestLab01.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-
-
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        };
 
         //private readonly ILogger<WeatherForecastController> _logger;
-        private ILoggerManager _logger;
+
 
 
         //public WeatherForecastController(ILogger<WeatherForecastController> logger)
@@ -23,6 +21,7 @@ namespace APIRestLab01.Controllers
         //    _logger = logger;
         //}
 
+        private ILoggerManager _logger;
         public WeatherForecastController(ILoggerManager logger)
         {
                 this._logger = logger;
